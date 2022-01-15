@@ -1,3 +1,13 @@
+1. Clone về chạy lệnh composer update 
+2. Tiếp theo chạy lệnh copy .env.example .env -> sửa file .env đổi tên DB_Username, DB_Database
+3. Chạy php artisan key:generate
+4. Chạy php artisan migrate
+5. Chạy php artisan serve -> chạy đc project
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
