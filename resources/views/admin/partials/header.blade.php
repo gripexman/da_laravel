@@ -38,7 +38,7 @@
                         
                         <li
                             class="menu-item  ">
-                            <a href="#" class='menu-link'>
+                            <a href="{{ route('dashboard') }}" class='menu-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
