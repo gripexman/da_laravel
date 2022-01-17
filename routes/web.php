@@ -30,10 +30,23 @@ Route::get('admin/logout', 'Auth\AdminAuthController@logout')->name('adminLogout
 
 Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
 	// Admin Dashboard
-	Route::get('dashboard','Admin\AdminController@dashboard')->name('dashboard');	
+	Route::get('dashboard','Admin\AdminController@dashboard')->name('dashboard');
+	
+	// Employee 
+	Route::get('/login', 'LoginController@showLoginForm');
+	Route::post('/login', 'LoginController@login')->name('login');
+
 	Route::resource('products', Admin\ProductController::class);
 	Route::resource('categories', Admin\CategoryController::class);
 	Route::resource('users', Admin\UserController::class);
+	
+	// Department Resource
+	Route::resource('depart', Admin\DepartmentController::class);
+
+	// Employee Resource
+	Route::resource('employee', 'Admin\EmployeeController');
+
 });
+
 
 

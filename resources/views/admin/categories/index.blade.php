@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Categories
+                    LOẠI SP
                     <a href="{{ route('categories.create') }}" class="btn btn-primary float-right">Create category</a>
                 </div>
 
@@ -18,6 +18,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Category Name</th>
+                                <th>Ngày Tạo</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -26,6 +27,7 @@
                             <tr>
                                 <td>{{ $category->id}}</td>
                                 <td>{{ $category->name}}</td>
+                                <td>{{ $category->created_at}}</td>
                                 <td>   
                                     <form action="{{ route('categories.destroy',$category->id) }}" method="POST" >  
                                         <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-xs btn-info">Edit</a>                           

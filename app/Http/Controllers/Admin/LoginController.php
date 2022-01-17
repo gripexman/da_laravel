@@ -46,6 +46,20 @@ class LoginController extends Controller
             return back()->withInput($request->only('email', 'remember'));
     }
 
+
+    protected function attemptLogin(Request $request){
+        $customerAttempt = Auth::guard('employee')->attempt(
+            $this->credentials($request), $request->has('remember')
+        );
+        if(!$customerAttempt){
+            return Auth::guard()->attempt(
+                $this->credentials($request), $request->has('remember')
+            );
+        } 
+        return $customerAttempt;    
+        
+    }
+
     public function logout(Request $request) {
         Auth::guard('admin')->logout();
         $request->session()->invalidate();

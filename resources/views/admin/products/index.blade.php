@@ -4,7 +4,7 @@
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h3>Products</h3>
+                <h3>SẢN PHẨM</h3>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}">Thêm sản phẩm</a>

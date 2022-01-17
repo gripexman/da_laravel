@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $products = Product::latest()->paginate(5);
 
-        return view('products.index',compact('products'))
+        return view('admin.products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::whereNotNull('category_id')->get();
-        return view('products.create', compact('categories'));
+        return view('admin.products.create', compact('categories'));
     }
 
     /**
@@ -63,7 +63,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',compact('product'));
+        return view('admin.products.show',compact('product'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::whereNotNull('category_id')->get();
-        return view('products.edit',compact('product'))
+        return view('admin.products.edit',compact('product'))
         ->with('success','Sản phẩm đã sửa.');
     }
 
@@ -102,7 +102,7 @@ class ProductController extends Controller
 
         $product->update($input);
 
-        return redirect()->route('products.index')
+        return redirect()->route('admin.products.index')
             ->with('success','Sản phẩm đã cập nhật thành công');
     }
 

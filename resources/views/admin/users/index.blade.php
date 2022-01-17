@@ -17,7 +17,7 @@
 
 <table class="table ">
     <tr>
-        <h3>Users</h3>
+        <h3>KHÁCH HÀNG</h3>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('users.create') }}">Add User</a>
         </div>

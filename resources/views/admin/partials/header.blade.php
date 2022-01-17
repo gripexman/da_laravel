@@ -33,9 +33,7 @@
             <nav class="main-navbar">
                 <div class="container">
                     <ul>
-                        
-                        
-                        
+                            
                         <li
                             class="menu-item  ">
                             <a href="{{ route('dashboard') }}" class='menu-link'>
@@ -48,7 +46,7 @@
                             class="menu-item">
                             <a href="{{ route('products.index') }}" class='menu-link'>
                                 <i class="bi bi-life-preserver"></i>
-                                <span>Product</span>
+                                <span>Sản Phẩm</span>
                             </a>
                         </li>
 
@@ -56,7 +54,7 @@
                         class="menu-item">
                         <a href="{{ route('categories.index') }}" class='menu-link'>
                             <i class="bi bi-life-preserver"></i>
-                            <span>Category</span>
+                            <span>Loại SP</span>
                         </a>
                         </li>
 
@@ -65,16 +63,16 @@
                         class="menu-item">
                         <a href="{{ route('users.index') }}" class='menu-link'>
                             <i class="bi bi-life-preserver"></i>
-                            <span>User</span>
+                            <span>Khách Hàng</span>
                         </a>
                         </li>
 
 
                         <li
                         class="menu-item">
-                        <a href="#" class='menu-link'>
+                        <a href="{{ route('employee.index') }}" class='menu-link'>
                             <i class="bi bi-life-preserver"></i>
-                            <span>Invoices</span>
+                            <span>Nhân Viên</span>
                         </a>
                         </li>
                          
