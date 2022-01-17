@@ -75,6 +75,14 @@
                             <span>Nhân Viên</span>
                         </a>
                         </li>
+
+                        <li
+                        class="menu-item">
+                        <a href="{{ route('invoiceinput.index') }}" class='menu-link'>
+                            <i class="bi bi-life-preserver"></i>
+                            <span>Hóa Đơn Nhập</span>
+                        </a>
+                        </li>
                          
                     </ul>
                 </div>
