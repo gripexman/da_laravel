@@ -31,10 +31,14 @@ Route::get('admin/logout', 'Auth\AdminAuthController@logout')->name('adminLogout
 Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
 	// Admin Dashboard
 	Route::get('dashboard','Admin\AdminController@dashboard')->name('dashboard');
+
 	
 	Route::resource('products', Admin\ProductController::class);
 	Route::resource('categories', Admin\CategoryController::class);
 	Route::resource('users', Admin\UserController::class);
+
+	//Invoice Input
+	Route::resource('invoiceinput', Admin\InvoiceInputController::class);
 	
 	// Department Resource
 	Route::resource('depart', Admin\DepartmentController::class);
