@@ -32,10 +32,6 @@ Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
 	// Admin Dashboard
 	Route::get('dashboard','Admin\AdminController@dashboard')->name('dashboard');
 	
-	// Employee 
-	Route::get('/login', 'LoginController@showLoginForm');
-	Route::post('/login', 'LoginController@login')->name('login');
-
 	Route::resource('products', Admin\ProductController::class);
 	Route::resource('categories', Admin\CategoryController::class);
 	Route::resource('users', Admin\UserController::class);
@@ -48,5 +44,14 @@ Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
 
 });
 
+
+// Route::get('/login','Auth\EmployeeAuthController@getLogin')->name('employeeLogin');
+// Route::post('/login', 'Auth\EmployeeAuthController@postLogin')->name('employeeLoginPost');
+// Route::get('/logout', 'Auth\EmployeeAuthController@logout')->name('employeeLogout');
+
+// Route::group(['prefix' => 'employee','middleware' => 'employeeauth'], function () {
+// 	// Employee Dashboard
+// 	Route::get('edashboard','EmployeeController@dashboard')->name('edashboard');	
+// });
 
 

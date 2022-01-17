@@ -14,6 +14,12 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboard()
+    {
+        return view('employee.edashboard');
+    }
+
+
     public function index()
     {
         $data=Employee::orderBy('id','desc')->get();

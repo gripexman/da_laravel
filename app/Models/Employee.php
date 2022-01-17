@@ -9,7 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
 
-    public $table = "employee";
+    protected $table = 'employee';
 
     protected $fillable = [
         'department_id', 'username','password', 'full_name', 'photo', 'address', 'phone', 'status',
@@ -18,6 +18,7 @@ class Employee extends Model
     protected $hidden = [
         'password',
     ];
+
 
     function department(){
         return $this->belongsTo(Department::class);
