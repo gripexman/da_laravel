@@ -59,13 +59,13 @@
                         </li>
 
                         
-                        <li
+                        {{-- <li
                         class="menu-item">
                         <a href="{{ route('users.index') }}" class='menu-link'>
                             <i class="bi bi-life-preserver"></i>
                             <span>Khách Hàng</span>
                         </a>
-                        </li>
+                        </li> --}}
 
 
                         <li

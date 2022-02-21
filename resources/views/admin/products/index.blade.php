@@ -28,7 +28,6 @@
             <th>SIZE</th>
             <th>ẢNH</th>
             <th>MÔ TẢ</th>
-            <th width="280px">Actions</th>
         </tr>
         @foreach ($products as $product)
             <tr>
@@ -39,19 +38,19 @@
                     {{$product->category->name}}
                 @endif
                 </td>
-                <td>{{ $product->price }}</td>
+                <td>{{ number_format( $product->price ),1000/3 }} VNĐ</td>
                 <td>{{ $product->quantity }}</td>
                 <td>{{ $product->size }}</td>
                 <td><img src="/image/{{ $product->imageUrl }}" width="100px"></td>
                 <td>{{ $product->description }}</td>
                 <td>
                     <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Sửa</a>
 
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Xóa</button>
                     </form>
                 </td>
             </tr>
