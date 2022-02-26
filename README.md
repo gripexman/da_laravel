@@ -2,7 +2,7 @@
 2. Tiếp theo chạy lệnh copy .env.example .env -> sửa file .env đổi tên DB_Username, DB_Database
 3. Chạy php artisan key:generate
 4. Chạy php artisan migrate
-5. Chạy php artisan serve -> chạy đc project
+5. Chạy php artisan serve -> Ok
 
 
 
