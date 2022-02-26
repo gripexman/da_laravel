@@ -102,7 +102,7 @@ class ProductController extends Controller
 
         $product->update($input);
 
-        return redirect()->route('admin.products.index')
+        return redirect()->route('products.index')
             ->with('success','Sản phẩm đã cập nhật thành công');
     }
 

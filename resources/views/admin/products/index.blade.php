@@ -1,5 +1,4 @@
 @extends('admin.mazer')
-
 @section('content')
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-lg-12 margin-tb">
@@ -56,7 +55,5 @@
             </tr>
         @endforeach
     </table>
-
     {!! $products->links() !!}
-
 @endsection
