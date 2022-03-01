@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     LOẠI SP
-                    <a href="{{ route('categories.create') }}" class="btn btn-primary float-right">Create category</a>
+                    <a href="{{ route('categories.create') }}" class="btn btn-primary float-right">Tạo mới</a>
                 </div>
 
                 <div class="card-body">
@@ -17,9 +17,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Category Name</th>
+                                <th>Tên Loại SP</th>
                                 <th>Ngày Tạo</th>
-                                <th>Actions</th>
+                                <th>Chức Năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,10 +30,10 @@
                                 <td>{{ $category->created_at}}</td>
                                 <td>   
                                     <form action="{{ route('categories.destroy',$category->id) }}" method="POST" >  
-                                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-xs btn-info">Edit</a>                           
+                                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-xs btn-info">Sửa</a>                           
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-xs btn-danger">Xóa</button>
                                     </form>
                                 </td>
                             </tr>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Laravel 8 Admin Auth - laravelcode.com</title>
+<title>Trang Quản Trị - Đăng Nhập</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -38,7 +38,7 @@
 <div class="login-form">
     <form action="{{ route('adminLoginPost') }}" method="post">
     	{!! csrf_field() !!}
-        <h2 class="text-center">Log in</h2>
+        <h2 class="text-center">Đăng nhập</h2>
         @if(\Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ \Session::get('success') }}
@@ -73,7 +73,7 @@
             @endif
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
         </div>      
     </form>
 </div>

@@ -24,11 +24,16 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home/cart', [App\Http\Controllers\CartController::class, 'cartList'])->name('cart');
+
+//Route::get('/home/product', [App\Http\Controllers\HomeController::class, 'allproduct'])->name('allproduct');
+
 //Route Product Details
 Route::get('/productdetail', function () {
     return view('user.home.productdetail');
 });
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Products
 Route::get('/product', function () {

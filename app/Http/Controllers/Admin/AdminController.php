@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use App\Models\InvoiceInput;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,6 +18,10 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $prodcount = DB::table('products')->count();
+        $usercount = User::count();
+        $catecount = Category::count();
+        $invinput = InvoiceInput::count();
+        return view('admin.dashboard',compact('prodcount','usercount','invinput','catecount'));
     }
 }

@@ -73,9 +73,12 @@ class InvoiceInputController extends Controller
      * @param  \App\Models\InvoiceInput  $invoiceInput
      * @return \Illuminate\Http\Response
      */
-    public function edit(InvoiceInput $invoiceInput)
+    public function edit($id)
     {
-        //
+        $invoice_input = InvoiceInput::find($id);
+        if($invoice_input) {
+            return view('admin.invoiceinput.edit')->with('invoiceinput', $invoice_input);
+        }
     }
 
     /**
@@ -85,9 +88,23 @@ class InvoiceInputController extends Controller
      * @param  \App\Models\InvoiceInput  $invoiceInput
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InvoiceInput $invoiceInput)
+    public function update(Request $request, InvoiceInput $invoice_input)
     {
-        //
+        $request->validate([
+            'ngaynhap' => 'required',
+            'mahoadon' => 'required',
+            'tensanpham' => 'required',
+            'soluong' => 'required',
+            'dongia' => 'required',
+            'tongtien' => 'nullable',
+        ]);
+
+        $input = $request->all();
+
+        $invoice_input->update($input);
+
+        return redirect()->route('invoiceinput.index')
+        ->with('success','Sửa hóa đơn thành công.');
     }
 
     /**

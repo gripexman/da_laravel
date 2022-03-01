@@ -41,8 +41,40 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="user-menu">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                        {{-- <ul>
+                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li> 
+                        </ul> --}}
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a style="color: white" class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                                    </li>
+                                @endif
+      
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a style="color: white" class="nav-link btn btn-danger" href="{{ route('register') }}">{{ __('Đăng kí') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown" style="display: inline-flex">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle fa fa-user btn btn-success" style="color:white" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+      
+                                        <a class="dropdown-item btn btn-danger" style="color: white" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Đăng xuất') }}
+                                        </a>
+      
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -85,7 +117,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="#">Cart - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{ Cart::getTotalQuantity()}}</span></a>
+                        <a href="{{ url('/cart') }}">Cart - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{ Cart::getTotalQuantity()}}</span></a>
                     </div>
                 </div>
             </div>
@@ -105,9 +137,9 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class=""><a href="index.html">Home</a></li>
-                        <li><a href="#">SẢN PHẨM</a></li>
-                        <li><a href="#">GIỎ HÀNG</a></li>
+                        <li class="#"><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ url('/product') }}">SẢN PHẨM</a></li>
+                        <li><a href="{{ url('/cart') }}">GIỎ HÀNG</a></li>
                     </ul>
                 </div>  
             </div>

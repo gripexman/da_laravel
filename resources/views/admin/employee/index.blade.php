@@ -5,7 +5,7 @@
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Tất Cả Nhân Viên
-                                <a href="{{ route('employee.create') }}" class="btn btn-sm btn-success">Add New</a>
+                                <a href="{{ route('employee.create') }}" class="btn btn-sm btn-success">Tạo mới</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple" class="table table-bordered">
@@ -13,12 +13,12 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>VỊ TRÍ</th>
-                                            <th>USERNAME</th>
+                                            <th>EMAIL</th>
                                             <th>HỌ TÊN</th>
                                             <th>ẢNH</th>
                                             <th>ĐỊA CHỈ</th>
                                             <th>SĐT</th>
-                                            <th>Action</th>
+                                            <th>CHỨC NĂNG</th>
                                         </tr>
                                     </thead>
 
@@ -35,12 +35,12 @@
                                                 <td>{{$d->phone}}</td>
                                                 <td>
                                                     <form action="{{ route('employee.destroy',$d->id) }}" method="POST">
-                                                        <a class="btn btn-primary" href="{{ route('employee.edit',$d->id) }}">Edit</a>
+                                                        <a class="btn btn-primary" href="{{ route('employee.edit',$d->id) }}">Sửa</a>
                                 
                                                         @csrf
                                                         @method('DELETE')
                                 
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <button type="submit" class="btn btn-danger">Xóa</button>
                                                     </form>
                                                 </td>
 	                                        </tr>

@@ -55,7 +55,7 @@
                                     <img src="image/{{ $sp->imageUrl }}" alt="">
                                 </div>
                                 
-                                <h2><a href="single-product.html">{{ $sp->name }}</a></h2>
+                                <h2><a href="{{ route('productdetail', $sp->id) }}">{{ $sp->name }}</a></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>{{number_format( $sp->price )}} VNĐ</ins> <del>$100.00</del>

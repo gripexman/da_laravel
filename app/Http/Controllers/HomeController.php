@@ -27,6 +27,11 @@ class HomeController extends Controller
         $data = DB::table('products')->get();
         return view('users.home.welcome', ['data' => $data]);
     }
+    public function allproduct()
+    {
+        //$data = DB::table('products')->get();
+        return view('users.home.product');
+    }
     public function productdetail($sp)
     {
         if (Product::where('id',$sp)->exists()) {
